@@ -1,11 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Job Application Tracker</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <!-- Header -->
+    <header>
+        <h1>Job Application Tracker</h1>
+        <p>Track your job applications in one place</p>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total Applications</h3>
+                <p id="totalApplications">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Applied</h3>
+                <p id="appliedCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Interview</h3>
+                <p id="interviewCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Rejected</h3>
+                <p id="rejectedCount">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Add Application Form -->
+        <section class="form-section">
+
+            <h2>Add Job Application</h2>
+
+            <form id="jobForm">
+
+                <label for="company">
+                    Company Name
+                </label>
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Enter company name"
+                    required
+                >
+
+
+                <label for="role">
+                    Job Role
+                </label>
+
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="Enter job role"
+                    required
+                >
+
+
+                <label for="date">
+                    Application Date
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+
+                <label for="status">
+                    Application Status
+                </label>
+
+                <select id="status">
+
+                    <option value="Applied">
+                        Applied
+                    </option>
+
+                    <option value="Interview">
+                        Interview
+                    </option>
+
+                    <option value="Selected">
+                        Selected
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Add Application
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Application List -->
+        <section class="application-section">
+
+            <h2>My Applications</h2>
+
+
+            <!-- Search -->
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search company or role..."
+            >
+
+
+            <!-- Filter -->
+            <select id="filterStatus">
+
+                <option value="All">
+                    All
+                </option>
+
+                <option value="Applied">
+                    Applied
+                </option>
+
+                <option value="Interview">
+                    Interview
+                </option>
+
+                <option value="Selected">
+                    Selected
+                </option>
+
+                <option value="Rejected">
+                    Rejected
+                </option>
+
+            </select>
+
+
+            <!-- Table -->
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="applicationList">
+                    <!-- JavaScript will add applications here -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
